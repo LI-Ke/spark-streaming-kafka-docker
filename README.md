@@ -16,8 +16,10 @@ docker build -t streaming .
 ```
 
 
-<p>Launch this container<br>
-<b>docker run --rm -i -t streaming</b></p>
+<p>Launch this container<br></p>
+```
+docker run --rm -i -t streaming
+```
 
 <h3>Kafka</h3>
 
