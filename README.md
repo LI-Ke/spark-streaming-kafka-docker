@@ -11,15 +11,15 @@
 <h3>Container</h3>
 
 <p>Do into this project where you can find the Dockerfile. Run the following command to build an image, named <b>streaming</b>, of the container<br></p>
-```
-docker build -t streaming .
-```
+
+```docker build -t streaming .```
+
 
 
 <p>Launch this container<br></p>
-```
-docker run --rm -i -t streaming
-```
+
+```docker run --rm -i -t streaming```
+
 
 <h3>Kafka</h3>
 
