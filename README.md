@@ -1,4 +1,4 @@
-<h1>dockerize Spark Streaming and Kafka</h1>
+<h1>Dockerize Spark Streaming and Kafka</h1>
 
 <h2>Preparation</h2>
 
