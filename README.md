@@ -10,34 +10,34 @@
 
 <h3>Container</h3>
 
-<p>Do into this project where you can find the Dockerfile. Run the following command to build an image, named <b>streaming</b>, of the container</p>
-docker build -t streaming .
+<p>Do into this project where you can find the Dockerfile. Run the following command to build an image, named <b>streaming</b>, of the container<br>
+<b>docker build -t streaming .</b></p>
 
-<p>Launch this container</p>
-docker run --rm -i -t streaming
+<p>Launch this container<br>
+<b>docker run --rm -i -t streaming</b></p>
 
 <h3>Kafka</h3>
 
-<p>Open another terminal, run this command to find the running container id</p>
-docker ps
+<p>Open another terminal, run this command to find the running container id<br>
+<b>docker ps</b></p>
 
-<p>Go into the running container</p>
-docker exec -it "container_id" 
+<p>Go into the running container<br>
+<b>docker exec -it "container_id" </b></p>
 
-<p>Launch zookeeper</p>
-kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties
+<p>Launch zookeeper<br>
+<b>kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties</b></p>
 
-<p>Open another terminal to launch kafka</p>
-docker exec -it "container_id" <br>
-kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties
+<p>Open another terminal to launch kafka<br>
+<b>docker exec -it "container_id" </b><br>
+<b>kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties</b></p>
 
 
-<p>Open another terminal to create a topic</p>
-docker exec -it "container_id" <br>
-kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic S-1i
+<p>Open another terminal to create a topic<br>
+<b>docker exec -it "container_id" </b><br>
+<b>kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic S-1i</b></p>
 
 <h3>Spark</h3>
-<p>Open another terminal to run the spark streaming application</p>
-docker exec -it "container_id" <br>
-spark-submit --master local --class sparkStreaming.DirectKafkaRDF streaming.jar kafka:9092 S-1i
+<p>Open another terminal to run the spark streaming application<br>
+<b>docker exec -it "container_id" </b><br>
+<b>spark-submit --master local --class sparkStreaming.DirectKafkaRDF streaming.jar kafka:9092 S-1i</b></p>
 
