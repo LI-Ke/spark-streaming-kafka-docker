@@ -10,11 +10,11 @@
 
 <h3>Container</h3>
 
-<p>Do into this project where you can find the Dockerfile. Run the following command to build an image, named <b>streaming</b>, of the container<br>
+<p>Do into this project where you can find the Dockerfile. Run the following command to build an image, named <b>streaming</b>, of the container<br></p>
 ```
-<b>docker build -t streaming .</b>
+docker build -t streaming .
 ```
-</p>
+
 
 <p>Launch this container<br>
 <b>docker run --rm -i -t streaming</b></p>
