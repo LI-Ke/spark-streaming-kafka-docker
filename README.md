@@ -22,22 +22,22 @@
 <b>docker ps</b></p>
 
 <p>Go into the running container<br>
-<b>docker exec -it "container_id" </b></p>
+<b>docker exec -it "container_id" bash</b></p>
 
 <p>Launch zookeeper<br>
 <b>kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties</b></p>
 
 <p>Open another terminal to launch kafka<br>
-<b>docker exec -it "container_id" </b><br>
+<b>docker exec -it "container_id" bash</b><br>
 <b>kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties</b></p>
 
 
 <p>Open another terminal to create a topic<br>
-<b>docker exec -it "container_id" </b><br>
+<b>docker exec -it "container_id" bash</b><br>
 <b>kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic S-1i</b></p>
 
 <h3>Spark</h3>
 <p>Open another terminal to run the spark streaming application<br>
-<b>docker exec -it "container_id" </b><br>
+<b>docker exec -it "container_id" bash</b><br>
 <b>spark-submit --master local --class sparkStreaming.DirectKafkaRDF streaming.jar kafka:9092 S-1i</b></p>
 
