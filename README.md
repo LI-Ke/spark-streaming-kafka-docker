@@ -24,25 +24,31 @@
 <h3>Kafka</h3>
 
 <p>Open another terminal, run this command to find the running container id<br></p>
+
 ```docker ps```
 
 <p>Go into the running container<br></p>
+
 ```docker exec -it "container_id" bash```
 
 <p>Launch zookeeper<br></p>
+
 ```kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties```</p>
 
 <p>Open another terminal to launch kafka<br></p>
+
 ```docker exec -it "container_id" bash```<br>
 ```kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties```
 
 
 <p>Open another terminal to create a topic<br></p>
+
 ```docker exec -it "container_id" bash```<br>
 ```kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic S-1i```
 
 <h3>Spark</h3>
 <p>Open another terminal to run the spark streaming application<br></p>
+
 ```docker exec -it "container_id" bash```<br>
 ```spark-submit --master local --class sparkStreaming.DirectKafkaRDF streaming.jar kafka:9092 S-1i```
 
